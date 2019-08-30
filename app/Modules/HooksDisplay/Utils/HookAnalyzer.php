@@ -59,12 +59,34 @@ class HookAnalyzer
         $hookTrace = $trace[ 5 ];
         $args      = $hookTrace[ 'args' ];
 
-        array_pop( $args );
+        array_shift( $args );
+
+        $args = array_map( function ( $arg ) {
+            return $this->mapArg( $arg );
+        }, $args );
 
         return [
             'location' => sprintf( '%s:%s', $hookTrace[ 'file' ], $hookTrace[ 'line' ] ),
             'args'     => $args,
         ];
+    }
+
+    /**
+     * Maps hook argument into readable format
+     *
+     * @param $arg
+     *
+     * @return false|mixed|string
+     */
+    protected function mapArg( $arg )
+    {
+        if ( is_object( $arg ) ) {
+            return get_class( $arg );
+        }
+
+        $value = is_array( $arg ) ? json_encode( $arg ) : $arg;
+
+        return gettype( $value );
     }
 
 }

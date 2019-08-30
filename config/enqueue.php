@@ -6,9 +6,9 @@ use UnderScorer\Core\Enqueue;
  * @var Enqueue $enqueue
  */
 
-$enqueue->enqueueStyle( [
-    'slug'     => 'smth-style',
-    'fileName' => 'styles',
+$enqueue->enqueueScript( [
+    'slug'     => 'smth-styles',
+    'fileName' => 'smth-styles',
 ] );
 
 $enqueue->enqueueScript( [

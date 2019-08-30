@@ -4,11 +4,13 @@
  */
 ?>
 <div class="smth-hook {{ $hook->getType() }}">
-    <span class="tag">
+    <span class="smth-tag">
         {{ $tag }}
     </span>
     <button class="button button-secondary smth-activator">
-        ⯈
+        <span>
+            ⯈
+        </span>
     </button>
     <ul class="smth-hook-details smth-hidden">
         <li class="smth-type">

@@ -5,7 +5,8 @@ const webpack = require( 'webpack' );
 module.exports = [
     {
         entry:        {
-            app: './src/ts/',
+            app:    './src/ts/',
+            styles: './src/ts/styles.ts',
         },
         resolve:      {
             extensions: [ '.ts', '.tsx', '.js' ],

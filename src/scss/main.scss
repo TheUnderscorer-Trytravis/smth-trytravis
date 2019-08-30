@@ -1,0 +1,60 @@
+:root {
+	--smth-hook-color: #6469e6;
+	--smth-filter-color: #ff7217;
+	--smth-wp-primary: #0073aa;
+	--smth-light-grey: rgba(255, 255, 255, 0.3);
+}
+
+.smth-hook {
+	font-family: monospace;
+	font-size: 0.8rem;
+	margin: 5px;
+	background: var(--smth-hook-color);
+	color: #fff;
+	padding: 5px;
+	display: inline-block;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	max-width: 400px;
+
+	&.filter {
+		background-color: var(--smth-filter-color);
+	}
+
+	.smth-activator {
+		background: transparent;
+		padding: 0.5em;
+		margin-left: 1em;
+		margin-right: 0.5em;
+		outline: none;
+
+		span {
+			transform: rotate(90deg);
+			transition: all .3s;
+			display: inline-block;
+		}
+
+		&:focus {
+			background-color: transparent;
+			outline: none;
+		}
+
+		&:hover {
+			background-color: var(--smth-light-grey);
+			outline: none;
+		}
+	}
+
+	&.smth-open {
+		.smth-activator span {
+			transform: rotate(-90deg);
+		}
+	}
+
+	.smth-hook-details {
+		word-break: break-word;
+	}
+}
+
+.smth-hidden {
+	display: none;
+}
