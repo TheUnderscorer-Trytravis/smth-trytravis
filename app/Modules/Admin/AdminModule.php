@@ -3,6 +3,7 @@
 namespace WPK\Modules\Admin;
 
 use UnderScorer\Core\Module;
+use WPK\Modules\Admin\Hooks\Controllers\AdminBarHandler;
 
 /**
  * Class AdminModule
@@ -10,6 +11,13 @@ use UnderScorer\Core\Module;
  */
 class AdminModule extends Module
 {
+
+    /**
+     * @var array
+     */
+    protected $controllers = [
+        AdminBarHandler::class,
+    ];
 
     /**
      * Performs module bootstrap
@@ -48,7 +56,7 @@ class AdminModule extends Module
                 $form
                     ->checkbox( 'use_wp_hooks' )
                     ->setLabel( '' )
-                    ->setText( 'Display hooks from WordPress core.' ),
+                    ->setText( 'Display hooks from WordPress core (not recommended).' ),
                 )
         )->setTitle( 'General' );
 
