@@ -7,9 +7,11 @@
  */
 
 use UnderScorer\Core\CoreModule;
+use WPK\Modules\Admin\AdminModule;
 use WPK\modules\HooksDisplay\HooksDisplayModule;
 
 return apply_filters( 'smth.modules', [
     'core'         => CoreModule::class,
     'hooksDisplay' => HooksDisplayModule::class,
+    'admin'        => AdminModule::class,
 ] );
