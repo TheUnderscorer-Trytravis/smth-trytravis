@@ -14,7 +14,7 @@ class RenderHooksHandlerTest extends TestCase
 {
 
     /**
-     * @covers RenderHooksHandler::render
+     * @covers RenderHooksHandler::handle()
      */
     public function testHandle(): void
     {
@@ -34,5 +34,28 @@ class RenderHooksHandlerTest extends TestCase
         $output = ob_get_clean();
 
         $this->assertContains('my_hook', $output);
+    }
+
+    /**
+     * @covers RenderHooksHandler::handle()
+     */
+    public function testIsNotDisplayingHooksForRegularUsers(): void
+    {
+        $this->login( 'editor' );
+
+        $controller = self::$app->make( RenderHooksHandler::class );
+        $request    = new Request();
+        $request->query->set( 'smth', true );
+
+        $controller->setRequest( $request );
+
+        do_action( 'wp' );
+
+        ob_start();
+        do_action( 'my_hook' );
+
+        $output = ob_get_clean();
+
+        $this->assertNotContains( 'my_hook', $output );
     }
 }

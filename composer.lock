@@ -3404,16 +3404,16 @@
         },
         {
             "name": "the-under-scorer/wpk-core",
-            "version": "1.5.2",
+          "version": "1.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheUnderScorer/wpk-core.git",
-                "reference": "ea31bcb51e795176093d37833dfd1560a01aec3d"
+              "reference": "b44b974d361472a64423e6d01bf4c280f7b48dd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TheUnderScorer/wpk-core/zipball/ea31bcb51e795176093d37833dfd1560a01aec3d",
-                "reference": "ea31bcb51e795176093d37833dfd1560a01aec3d",
+              "url": "https://api.github.com/repos/TheUnderScorer/wpk-core/zipball/b44b974d361472a64423e6d01bf4c280f7b48dd4",
+              "reference": "b44b974d361472a64423e6d01bf4c280f7b48dd4",
                 "shasum": ""
             },
             "require": {
@@ -3448,7 +3448,7 @@
                     "email": "przemyslawzydek@gmail.com"
                 }
             ],
-            "time": "2019-08-29T15:41:40+00:00"
+          "time": "2019-08-30T06:52:26+00:00"
         },
         {
             "name": "theseer/tokenizer",

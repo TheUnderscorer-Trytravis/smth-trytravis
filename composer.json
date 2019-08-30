@@ -1,5 +1,6 @@
 {
   "version": "1.0",
+  "name": "show-me-the-hooks",
   "require": {
     "the-under-scorer/wpk-core": "^1.2",
     "phpunit/phpunit": "^7"

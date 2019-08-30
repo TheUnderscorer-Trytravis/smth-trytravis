@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use UnderScorer\Core\Hooks\Controllers\Controller;
 use UnderScorer\Core\Utility\Arr;
 use WPK\Modules\HooksDisplay\Data\IgnoredHooks;
+use WPK\Modules\HooksDisplay\Utils\HookAnalyzer;
 
 /**
  * Class RenderHooksHandler
@@ -46,7 +47,19 @@ class RenderHooksHandler extends Controller
             return;
         }
 
-        echo $this->render( 'hook', [ 'tag' => $tag ] );
+        /**
+         * @var HookAnalyzer $renderer
+         */
+        $renderer = $this->app->make( HookAnalyzer::class, [
+            'tag' => $tag,
+        ] );
+
+        $attributes = $renderer->getTagAttributes();
+
+        echo $this->render( 'hook', [
+            'tag'  => $tag,
+            'hook' => $attributes,
+        ] );
     }
 
     /**
